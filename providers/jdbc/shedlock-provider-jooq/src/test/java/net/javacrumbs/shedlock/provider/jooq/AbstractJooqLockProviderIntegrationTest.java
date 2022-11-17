@@ -15,7 +15,7 @@
  */
 package net.javacrumbs.shedlock.provider.jooq;
 
-import net.javacrumbs.shedlock.core.ExtensibleLockProvider;
+import net.javacrumbs.shedlock.support.StorageBasedLockProvider;
 import net.javacrumbs.shedlock.test.support.jdbc.AbstractJdbcLockProviderIntegrationTest;
 import net.javacrumbs.shedlock.test.support.jdbc.DbConfig;
 import org.jooq.DSLContext;
@@ -38,7 +38,7 @@ public abstract class AbstractJooqLockProviderIntegrationTest extends AbstractJd
     }
 
     @Override
-    protected ExtensibleLockProvider getLockProvider() {
+    protected StorageBasedLockProvider getLockProvider() {
         return new JooqLockProvider(dslContext);
     }
 
